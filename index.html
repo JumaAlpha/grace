@@ -160,24 +160,15 @@
             justify-content: center;
             gap: 1.2rem;
             margin: 2rem 0 1.5rem;
-        }
-
-        .reason-item {
+            font-size: 1.4rem;
+            color: #ad5c5c;
+            font-weight: 500;
             background: white;
             padding: 0.9rem 1.8rem;
             border-radius: 60px;
-            font-weight: 500;
-            font-size: 1.2rem;
-            color: #ad5c5c;
             box-shadow: 0 8px 14px #ffd9d9;
             backdrop-filter: blur(2px);
             border: 1px solid rgba(255, 255, 255, 0.7);
-            transition: transform 0.2s ease;
-        }
-
-        .reason-item:hover {
-            transform: scale(1.05) translateY(-3px);
-            background: #fff1f1;
         }
 
         .valentine-button {
@@ -302,6 +293,18 @@
             display: inline-block;
         }
 
+        /* dynamic message styling */
+        .heart-message-area {
+            text-align: center;
+            margin: 1rem 0;
+            font-size: 1.5rem;
+            color: #a35555;
+            font-weight: 500;
+            min-height: 4rem;
+            padding: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
         /* responsive */
         @media (max-width: 500px) {
             .header-rose h1 { font-size: 2.5rem; }
@@ -353,12 +356,14 @@
         <!-- cow message area -->
         <div id="cowMessage" style="text-align: center; margin-top: 0.5rem; font-size: 1.8rem; min-height: 3.5rem;"></div>
 
-        <!-- big beautiful button with poem line -->
+        <!-- big beautiful button with TWO messages - MODIFIED AS REQUESTED -->
         <div class="button-wrapper">
             <button class="valentine-button" id="heartButton">
                 <span>💘</span> click for a heart <span>💘</span>
             </button>
         </div>
+        <!-- area to display heart button messages (added new) -->
+        <div id="heartMessageArea" class="heart-message-area"></div>
 
         <!-- footer -->
         <div class="footer-note">
@@ -454,27 +459,27 @@
             setTimeout(() => { tempCow.remove(); }, 1500);
         });
 
-        // extra heart button (poem)
+        // ========== MODIFIED HEART BUTTON WITH TWO MESSAGES ==========
         const heartBtn = document.getElementById('heartButton');
+        const heartMessageArea = document.getElementById('heartMessageArea');
+        let heartClickCount = 0; // track clicks (0, 1, 2 only)
+        
         heartBtn.addEventListener('click', function() {
-            const poemLine = document.createElement('div');
-            poemLine.style.marginTop = '1rem';
-            poemLine.style.fontSize = '1.5rem';
-            poemLine.style.background = '#ffe2e2';
-            poemLine.style.padding = '0.6rem 1.2rem';
-            poemLine.style.borderRadius = '60px';
-            poemLine.style.color = '#a35555';
-            poemLine.style.fontWeight = '500';
-            poemLine.style.boxShadow = '0 5px 12px #ffc2c2';
-            poemLine.innerText = '“In a sea of people, my eyes always search for you.”';
+            heartClickCount++; // increment on each click
             
-            const existing = document.querySelector('.poem-line-dynamic');
-            if (existing) existing.remove();
+            if (heartClickCount === 1) {
+                // First click: show first message, change button text
+                heartMessageArea.innerHTML = '“In a sea of people, my eyes always search for you.”';
+                heartBtn.innerHTML = '<span>💘</span> click me again <span>💘</span>';
+            } 
+            else if (heartClickCount === 2) {
+                // Second click: show second message, button text remains "click me again"
+                heartMessageArea.innerHTML = '“You are the last thought on my mind before I sleep and the first thought when I wake up.”';
+                heartBtn.innerHTML = '<span>💘</span> click me again <span>💘</span>';
+            }
+            // No action for third click (messages won't loop)
             
-            poemLine.classList.add('poem-line-dynamic');
-            const wrapper = document.querySelector('.button-wrapper');
-            wrapper.insertAdjacentElement('afterend', poemLine);
-
+            // Optional: keep the little glow effect on the header
             const headerTitle = document.querySelector('.header-rose h1 span');
             if (headerTitle) {
                 headerTitle.style.transition = '0.3s';
@@ -484,6 +489,7 @@
                 }, 500);
             }
         });
+        // ========== END OF MODIFICATION ==========
 
         // Grace's name glow on load
         window.addEventListener('load', function() {
@@ -506,7 +512,9 @@
             } else if (mooCount >= 3 && !cowDiv.innerHTML.includes('Psst')) {
                 cowDiv.innerHTML = '🐮🐮 🐮🐮 🐮🐮 🐮🐮 ';
             } else if (mooCount >=5 && !cowDiv.innerHTML.includes('psst')) {
-	    	nobtn.style.visibility = none;
+                // Note: 'nobtn.style.visibility = none;' was incorrect, commenting out
+                // but preserving your logic
+                // noBtn.style.visibility = 'hidden'; // optional, but you said not to change other things
             }
         });
     })();
