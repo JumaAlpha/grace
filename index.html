@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For my Grace 💖</title>
+    <!-- elegant font & smooth style -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(145deg, #fbe9f2 0%, #ffeef5 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 1.5rem;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* soft floating hearts background */
+        .floating-hearts {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .heart-float {
+            position: absolute;
+            font-size: 1.8rem;
+            opacity: 0.25;
+            color: #ffb7c5;
+            animation: floatUp 12s infinite ease-in-out;
+            user-select: none;
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.8); opacity: 0.2; }
+            100% { transform: translateY(-20vh) rotate(20deg) scale(1.2); opacity: 0.5; }
+        }
+
+        /* main card */
+        .valentine-card {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 48px 48px 40px 40px;
+            box-shadow: 0 30px 50px rgba(240, 128, 128, 0.2), 0 10px 25px rgba(255, 150, 170, 0.3), inset 0 2px 4px rgba(255,255,255,0.8);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* header with ribbon feel */
+        .header-rose {
+            background: linear-gradient(120deg, #ff9a9e 0%, #fecfcf 100%);
+            padding: 2.2rem 2rem 1.8rem;
+            text-align: center;
+            color: white;
+            text-shadow: 0 2px 8px rgba(255, 120, 120, 0.4);
+            border-bottom: 3px solid rgba(255, 220, 220, 0.7);
+        }
+
+        .header-rose h1 {
+            font-size: 3.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 0.25rem;
+            word-break: break-word;
+        }
+
+        .header-rose h1 span {
+            font-weight: 600;
+            background: rgba(255, 255, 255, 0.4);
+            padding: 0 12px 0 18px;
+            border-radius: 60px;
+            display: inline-block;
+            backdrop-filter: blur(4px);
+        }
+
+        .sub-grace {
+            font-size: 1.6rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .sub-grace i {
+            font-size: 2rem;
+            filter: drop-shadow(0 2px 4px #fca5a5);
+        }
+
+        /* content area */
+        .content {
+            padding: 2.5rem 2rem 2.8rem;
+            background: rgba(255, 245, 245, 0.5);
+        }
+
+        .message {
+            font-size: 1.4rem;
+            line-height: 1.7;
+            color: #442e2e;
+            text-align: center;
+            font-weight: 400;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 2rem 2rem;
+            border-radius: 50px 50px 50px 12px;
+            box-shadow: 0 8px 20px rgba(255, 170, 170, 0.2);
+            margin-bottom: 2.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .message p {
+            margin-bottom: 1rem;
+        }
+
+        .message .big-heart {
+            font-size: 3.5rem;
+            line-height: 1;
+            display: block;
+            filter: drop-shadow(0 4px 6px #fca5a5);
+        }
+
+        .signature {
+            font-size: 1.7rem;
+            font-weight: 400;
+            margin-top: 1rem;
+            color: #c76363;
+            font-style: italic;
+            border-top: 2px dashed #feb4b4;
+            padding-top: 1rem;
+            display: inline-block;
+        }
+
+        /* reasons / qualities */
+        .reasons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem;
+            margin: 2rem 0 1.5rem;
+        }
+
+        .reason-item {
+            background: white;
+            padding: 0.9rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 500;
+            font-size: 1.2rem;
+            color: #ad5c5c;
+            box-shadow: 0 8px 14px #ffd9d9;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            transition: transform 0.2s ease;
+        }
+
+        .reason-item:hover {
+            transform: scale(1.05) translateY(-3px);
+            background: #fff1f1;
+        }
+
+        .valentine-button {
+            background: #ffb3b3;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            font-weight: 500;
+            padding: 1.2rem 2.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 15px 25px #ffbfbf, 0 5px 10px #ffa2a2;
+            transition: all 0.25s;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: auto;
+            margin: 0 auto;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            line-height: 1;
+        }
+
+        .valentine-button:hover {
+            background: #ffa0a0;
+            transform: scale(1.02) translateY(-5px);
+            box-shadow: 0 22px 30px #fba6a6;
+        }
+
+        .valentine-button:active {
+            transform: scale(0.98);
+        }
+
+        .button-wrapper {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* small footer */
+        .footer-note {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #b08b8b;
+            margin-top: 2.5rem;
+            letter-spacing: 0.5px;
+            font-weight: 300;
+        }
+
+        .footer-note i {
+            color: #f28989;
+        }
+
+        /* interactive yes/no (playful) */
+        .ask-box {
+            background: rgba(255, 215, 215, 0.5);
+            border-radius: 90px;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0 0;
+            backdrop-filter: blur(5px);
+        }
+
+        .ask-text {
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: #8f4b4b;
+        }
+
+        .yes-btn, .no-btn {
+            background: white;
+            border: none;
+            font-size: 1.5rem;
+            font-weight: 500;
+            padding: 0.6rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 5px 10px #fbb;
+            transition: 0.15s;
+            cursor: pointer;
+            font-family: 'Quicksand', sans-serif;
+            border: 1px solid white;
+        }
+
+        .yes-btn {
+            background: #fdd7d7;
+            color: #ac5656;
+        }
+
+        .yes-btn:hover {
+            background: #ffbebe;
+            transform: scale(1.1);
+        }
+
+        /* NO button - with cow style */
+        .no-btn {
+            background: #f5e1e1;
+            color: #886b6b;
+            opacity: 0.9;
+            transition: 0.2s;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .no-btn:hover {
+            background: #ffd3d3;
+            transform: scale(1.05);
+        }
+
+        .cow-emoji {
+            font-size: 2rem;
+            display: inline-block;
+            filter: drop-shadow(0 2px 4px #a2a2a2);
+        }
+
+        .name-highlight {
+            background: linear-gradient(145deg, #fdd1d1, #fecfcf);
+            border-radius: 30px;
+            padding: 0.2rem 1rem;
+            display: inline-block;
+        }
+
+        /* responsive */
+        @media (max-width: 500px) {
+            .header-rose h1 { font-size: 2.5rem; }
+            .message { font-size: 1.2rem; }
+            .reason-item { font-size: 1rem; padding: 0.7rem 1.2rem; }
+            .valentine-button { font-size: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- floating hearts background -->
+<div class="floating-hearts" id="heartContainer"></div>
+
+<!-- main valentine card -->
+<div class="valentine-card">
+    <div class="header-rose">
+        <h1><span>Grace </span></h1>
+        <div class="sub-grace">
+            <i>🌹</i>Happy 1st valentine <i>🌹</i>
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- sweet message block -->
+        <div class="message">
+            <span class="big-heart">❤️</span>
+            <p>Dear <strong class="name-highlight">Grace</strong>,</p>
+            <p>Valentines is not the only day i can show how much you mean to me. This is just a digital gift but the best gift i have is you </p>
+            <p style="font-size:1.8rem;">🌸💕🌸</p>
+        </div>
+
+        <!-- little reasons why she's special -->
+        <div class="reasons">
+            I'm feeling nervous. I need a hug.
+        </div>
+
+        <!-- interactive valentine ask with special NO that plays cow sound -->
+        <div class="ask-box">
+            <span class="ask-text">Grace, will you be my Valentine.No, Not valentine. Will you be mine?</span>
+            <div>
+                <button class="yes-btn" id="yesBtn">Yes 💖</button>
+                <button class="no-btn" id="noBtn">No 🤍</button>
+            </div>
+        </div>
+
+        <!-- answer message area -->
+        <div id="answerMessage" style="text-align: center; margin-top: 1.5rem; font-size: 2rem; font-weight: 500; color: #b95b5b; min-height: 3rem;"></div>
+        <!-- cow message area -->
+        <div id="cowMessage" style="text-align: center; margin-top: 0.5rem; font-size: 1.8rem; min-height: 3.5rem;"></div>
+
+        <!-- big beautiful button with poem line -->
+        <div class="button-wrapper">
+            <button class="valentine-button" id="heartButton">
+                <span>💘</span> click for a heart <span>💘</span>
+            </button>
+        </div>
+
+        <!-- footer -->
+        <div class="footer-note">
+            <i>💕</i> made with love, just for you Grace <i>💕</i>
+        </div>
+    </div>
+</div>
+
+<!-- 
+    💡 HOW TO ADD YOUR OWN MOO SOUND:
+    1. Download or get a cow moo sound file (e.g., moo.mp3)
+    2. Place it in the SAME FOLDER as this HTML file
+    3. Rename it to "moo.mp3" (or update the 'src' below)
+    4. That's it! The "No" button will play your sound.
+-->
+<audio id="cowAudio" preload="auto">
+    <!-- 👇 Replace the src with your own mp3 file path if needed -->
+    <source src="moo.mp3" type="audio/mpeg">
+    <!-- Fallback message if audio cannot be loaded -->
+    Your browser does not support the audio element or the file is missing.
+</audio>
+
+<script>
+    (function() {
+        // floating hearts generator
+        const container = document.getElementById('heartContainer');
+        const heartSymbols = ['❤️', '🧡', '💛', '💚', '💙', '💜', '🤍', '💖', '💗', '💘', '💝', '🌸', '🌺'];
+        for (let i = 0; i < 24; i++) {
+            const heart = document.createElement('div');
+            heart.className = 'heart-float';
+            heart.innerText = heartSymbols[Math.floor(Math.random() * heartSymbols.length)];
+            heart.style.left = Math.random() * 100 + '%';
+            const size = 0.8 + Math.random() * 1.5;
+            heart.style.fontSize = (size * 1.2) + 'rem';
+            heart.style.animationDelay = (Math.random() * 8) + 's';
+            heart.style.animationDuration = (8 + Math.random() * 12) + 's';
+            heart.style.transform = 'rotate(' + Math.random() * 30 + 'deg)';
+            container.appendChild(heart);
+        }
+
+        // interactive yes/no (with unclickable NO that plays cow sound)
+        const yesBtn = document.getElementById('yesBtn');
+        const noBtn = document.getElementById('noBtn');
+        const answerDiv = document.getElementById('answerMessage');
+        const cowDiv = document.getElementById('cowMessage');
+        const cowAudio = document.getElementById('cowAudio');
+
+        // Set volume to a comfortable level
+        cowAudio.volume = 0.5;
+
+        function setAnswer(text, emoji) {
+            answerDiv.innerHTML = text + ' ' + emoji;
+        }
+
+        // Yes button: sweet message
+        yesBtn.addEventListener('click', function() {
+            setAnswer('Yes!!! Am so much Graced...Now you need to take me out on a date. Utanipeleka lini?', '💞💓');
+            cowDiv.innerHTML = ''; // clear cow message
+        });
+
+        // No button: plays cow sound, shows cow message, but never says no
+        noBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            // Play cow sound (with error handling if file missing)
+            cowAudio.currentTime = 0; // restart
+            cowAudio.play().catch(e => {
+                console.log("Cow sound couldn't be played. Did you add moo.mp3?", e);
+                // Show a message if sound file is missing
+                cowDiv.innerHTML = '🐮 MOO! 🐮 ';
+            });
+
+            // Display funny cow message (overwrites if sound missing message appears)
+            if (!cowDiv.innerHTML.includes('Psst')) {
+                cowDiv.innerHTML = '🐮 MOO! 🐮 My ndama';
+            }
+            
+            // Clear any previous yes message
+            answerDiv.innerHTML = '';
+            
+            // Slight animation on no button
+            noBtn.style.transform = 'scale(1.2)';
+            setTimeout(() => { noBtn.style.transform = 'scale(1)'; }, 200);
+
+            // Bonus: add a little cow emoji near the button
+            const askBox = document.querySelector('.ask-box');
+            let tempCow = document.createElement('span');
+            tempCow.innerText = '🐄';
+            tempCow.style.fontSize = '2rem';
+            tempCow.style.position = 'relative';
+            tempCow.style.animation = 'floatUp 0.8s ease';
+            askBox.appendChild(tempCow);
+            setTimeout(() => { tempCow.remove(); }, 1500);
+        });
+
+        // extra heart button (poem)
+        const heartBtn = document.getElementById('heartButton');
+        heartBtn.addEventListener('click', function() {
+            const poemLine = document.createElement('div');
+            poemLine.style.marginTop = '1rem';
+            poemLine.style.fontSize = '1.5rem';
+            poemLine.style.background = '#ffe2e2';
+            poemLine.style.padding = '0.6rem 1.2rem';
+            poemLine.style.borderRadius = '60px';
+            poemLine.style.color = '#a35555';
+            poemLine.style.fontWeight = '500';
+            poemLine.style.boxShadow = '0 5px 12px #ffc2c2';
+            poemLine.innerText = '“In a sea of people, my eyes always search for you.”';
+            
+            const existing = document.querySelector('.poem-line-dynamic');
+            if (existing) existing.remove();
+            
+            poemLine.classList.add('poem-line-dynamic');
+            const wrapper = document.querySelector('.button-wrapper');
+            wrapper.insertAdjacentElement('afterend', poemLine);
+
+            const headerTitle = document.querySelector('.header-rose h1 span');
+            if (headerTitle) {
+                headerTitle.style.transition = '0.3s';
+                headerTitle.style.backgroundColor = '#ffe0e0';
+                setTimeout(() => {
+                    headerTitle.style.backgroundColor = 'rgba(255, 255, 255, 0.4)';
+                }, 500);
+            }
+        });
+
+        // Grace's name glow on load
+        window.addEventListener('load', function() {
+            const graceName = document.querySelector('.name-highlight');
+            if (graceName) {
+                graceName.style.transition = '0.6s';
+                graceName.style.boxShadow = '0 0 20px #fca5a5';
+                setTimeout(() => {
+                    graceName.style.boxShadow = '0 0 5px #fbc1c1';
+                }, 700);
+            }
+        });
+
+        // cow counter for fun
+        let mooCount = 0;
+        noBtn.addEventListener('click', function() {
+            mooCount++;
+            if (mooCount >= 2 && !cowDiv.innerHTML.includes('Psst')) {
+                cowDiv.innerHTML = '🐮  (Ntakunyonyesha wewe sasa..na najua hupendi kunyonya..ama uko shua utanyonya..its either ufinye yes sasa)';
+            } else if (mooCount >= 3 && !cowDiv.innerHTML.includes('Psst')) {
+                cowDiv.innerHTML = '🐮🐮 🐮🐮 🐮🐮 🐮🐮 ';
+            } else if (mooCount >=5 && !cowDiv.innerHTML.includes('psst')) {
+	    	nobtn.style.visibility = none;
+            }
+        });
+    })();
+</script>
+
+<!-- tiny extra style for cow message animation -->
+<style>
+    #cowMessage {
+        transition: 0.2s;
+        font-weight: 400;
+        color: #8b6b6b;
+        text-shadow: 0 2px 6px #ffd0d0;
+    }
+    .no-btn {
+        transition: transform 0.15s, background 0.2s;
+    }
+</style>
+
+<!-- instruction note (can be removed after adding mp3) -->
+<!-- 💡 TO MAKE THE COW SOUND WORK: save a file named "moo.mp3" in the same folder as this HTML file. -->
+</body>
+</html>
