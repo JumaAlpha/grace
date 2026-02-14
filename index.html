@@ -17,7 +17,8 @@
 
         body {
             font-family: 'Quicksand', sans-serif;
-            background: linear-gradient(145deg, #fbe9f2 0%, #ffeef5 100%);
+            /* NEW: Girlish palette - peachy/apricot with soft coral, no pinks/purples */
+            background: linear-gradient(145deg, #ffe6d5 0%, #ffdec5 100%);
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -43,7 +44,7 @@
             position: absolute;
             font-size: 1.8rem;
             opacity: 0.25;
-            color: #ffb7c5;
+            color: #ffb59e; /* soft peach */
             animation: floatUp 12s infinite ease-in-out;
             user-select: none;
         }
@@ -59,24 +60,24 @@
             z-index: 10;
             max-width: 800px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 245, 235, 0.6);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border-radius: 48px 48px 40px 40px;
-            box-shadow: 0 30px 50px rgba(240, 128, 128, 0.2), 0 10px 25px rgba(255, 150, 170, 0.3), inset 0 2px 4px rgba(255,255,255,0.8);
+            box-shadow: 0 30px 50px rgba(255, 180, 140, 0.2), 0 10px 25px rgba(255, 160, 130, 0.3), inset 0 2px 4px rgba(255,255,255,0.8);
             border: 1px solid rgba(255, 255, 255, 0.7);
             overflow: hidden;
             transition: all 0.3s ease;
         }
 
-        /* header with ribbon feel */
+        /* header with ribbon feel - peachy coral */
         .header-rose {
-            background: linear-gradient(120deg, #ff9a9e 0%, #fecfcf 100%);
+            background: linear-gradient(120deg, #ffb28b 0%, #ffc4a2 100%);
             padding: 2.2rem 2rem 1.8rem;
             text-align: center;
             color: white;
-            text-shadow: 0 2px 8px rgba(255, 120, 120, 0.4);
-            border-bottom: 3px solid rgba(255, 220, 220, 0.7);
+            text-shadow: 0 2px 8px rgba(255, 140, 100, 0.4);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.7);
         }
 
         .header-rose h1 {
@@ -108,25 +109,25 @@
 
         .sub-grace i {
             font-size: 2rem;
-            filter: drop-shadow(0 2px 4px #fca5a5);
+            filter: drop-shadow(0 2px 4px #ffa77a);
         }
 
         /* content area */
         .content {
             padding: 2.5rem 2rem 2.8rem;
-            background: rgba(255, 245, 245, 0.5);
+            background: rgba(255, 245, 235, 0.5);
         }
 
         .message {
             font-size: 1.4rem;
             line-height: 1.7;
-            color: #442e2e;
+            color: #5a4a3e; /* warm brown */
             text-align: center;
             font-weight: 400;
             background: rgba(255, 255, 255, 0.7);
             padding: 2rem 2rem;
             border-radius: 50px 50px 50px 12px;
-            box-shadow: 0 8px 20px rgba(255, 170, 170, 0.2);
+            box-shadow: 0 8px 20px rgba(255, 180, 140, 0.2);
             margin-bottom: 2.2rem;
             border: 1px solid rgba(255, 255, 255, 0.9);
         }
@@ -139,16 +140,16 @@
             font-size: 3.5rem;
             line-height: 1;
             display: block;
-            filter: drop-shadow(0 4px 6px #fca5a5);
+            filter: drop-shadow(0 4px 6px #ffb28b);
         }
 
         .signature {
             font-size: 1.7rem;
             font-weight: 400;
             margin-top: 1rem;
-            color: #c76363;
+            color: #c27e5c;
             font-style: italic;
-            border-top: 2px dashed #feb4b4;
+            border-top: 2px dashed #ffc4a2;
             padding-top: 1rem;
             display: inline-block;
         }
@@ -161,18 +162,18 @@
             gap: 1.2rem;
             margin: 2rem 0 1.5rem;
             font-size: 1.4rem;
-            color: #ad5c5c;
+            color: #a56f53;
             font-weight: 500;
             background: white;
             padding: 0.9rem 1.8rem;
             border-radius: 60px;
-            box-shadow: 0 8px 14px #ffd9d9;
+            box-shadow: 0 8px 14px #ffd9c2;
             backdrop-filter: blur(2px);
             border: 1px solid rgba(255, 255, 255, 0.7);
         }
 
         .valentine-button {
-            background: #ffb3b3;
+            background: #ffb28b;
             border: none;
             color: white;
             font-size: 1.8rem;
@@ -180,7 +181,7 @@
             padding: 1.2rem 2.2rem;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 15px 25px #ffbfbf, 0 5px 10px #ffa2a2;
+            box-shadow: 0 15px 25px #ffc8ad, 0 5px 10px #ffaa80;
             transition: all 0.25s;
             display: inline-flex;
             align-items: center;
@@ -193,9 +194,9 @@
         }
 
         .valentine-button:hover {
-            background: #ffa0a0;
+            background: #ffa275;
             transform: scale(1.02) translateY(-5px);
-            box-shadow: 0 22px 30px #fba6a6;
+            box-shadow: 0 22px 30px #ffba99;
         }
 
         .valentine-button:active {
@@ -211,19 +212,19 @@
         .footer-note {
             text-align: center;
             font-size: 1.1rem;
-            color: #b08b8b;
+            color: #b18569;
             margin-top: 2.5rem;
             letter-spacing: 0.5px;
             font-weight: 300;
         }
 
         .footer-note i {
-            color: #f28989;
+            color: #ffb28b;
         }
 
         /* interactive yes/no (playful) */
         .ask-box {
-            background: rgba(255, 215, 215, 0.5);
+            background: rgba(255, 225, 205, 0.5);
             border-radius: 90px;
             padding: 1rem 2rem;
             display: flex;
@@ -238,7 +239,7 @@
         .ask-text {
             font-size: 1.6rem;
             font-weight: 400;
-            color: #8f4b4b;
+            color: #a56f53;
         }
 
         .yes-btn, .no-btn {
@@ -248,7 +249,7 @@
             font-weight: 500;
             padding: 0.6rem 2rem;
             border-radius: 50px;
-            box-shadow: 0 5px 10px #fbb;
+            box-shadow: 0 5px 10px #ffcfb5;
             transition: 0.15s;
             cursor: pointer;
             font-family: 'Quicksand', sans-serif;
@@ -256,19 +257,19 @@
         }
 
         .yes-btn {
-            background: #fdd7d7;
-            color: #ac5656;
+            background: #ffe1d0;
+            color: #a56f53;
         }
 
         .yes-btn:hover {
-            background: #ffbebe;
+            background: #ffd2bb;
             transform: scale(1.1);
         }
 
         /* NO button - with cow style */
         .no-btn {
-            background: #f5e1e1;
-            color: #886b6b;
+            background: #f5e4d9;
+            color: #7e685a;
             opacity: 0.9;
             transition: 0.2s;
             position: relative;
@@ -276,7 +277,7 @@
         }
 
         .no-btn:hover {
-            background: #ffd3d3;
+            background: #f5d5c5;
             transform: scale(1.05);
         }
 
@@ -287,7 +288,7 @@
         }
 
         .name-highlight {
-            background: linear-gradient(145deg, #fdd1d1, #fecfcf);
+            background: linear-gradient(145deg, #ffdccc, #ffcfb8);
             border-radius: 30px;
             padding: 0.2rem 1rem;
             display: inline-block;
@@ -298,7 +299,7 @@
             text-align: center;
             margin: 1rem 0;
             font-size: 1.5rem;
-            color: #a35555;
+            color: #b26b42;
             font-weight: 500;
             min-height: 4rem;
             padding: 0.5rem;
@@ -316,7 +317,7 @@
 </head>
 <body>
 
-<!-- floating hearts background -->
+<!-- floating hearts background - now peachy -->
 <div class="floating-hearts" id="heartContainer"></div>
 
 <!-- main valentine card -->
@@ -352,7 +353,7 @@
         </div>
 
         <!-- answer message area -->
-        <div id="answerMessage" style="text-align: center; margin-top: 1.5rem; font-size: 2rem; font-weight: 500; color: #b95b5b; min-height: 3rem;"></div>
+        <div id="answerMessage" style="text-align: center; margin-top: 1.5rem; font-size: 2rem; font-weight: 500; color: #b26b42; min-height: 3rem;"></div>
         <!-- cow message area -->
         <div id="cowMessage" style="text-align: center; margin-top: 0.5rem; font-size: 1.8rem; min-height: 3.5rem;"></div>
 
@@ -496,9 +497,9 @@
             const graceName = document.querySelector('.name-highlight');
             if (graceName) {
                 graceName.style.transition = '0.6s';
-                graceName.style.boxShadow = '0 0 20px #fca5a5';
+                graceName.style.boxShadow = '0 0 20px #ffb28b';
                 setTimeout(() => {
-                    graceName.style.boxShadow = '0 0 5px #fbc1c1';
+                    graceName.style.boxShadow = '0 0 5px #ffcfb5';
                 }, 700);
             }
         });
@@ -525,8 +526,8 @@
     #cowMessage {
         transition: 0.2s;
         font-weight: 400;
-        color: #8b6b6b;
-        text-shadow: 0 2px 6px #ffd0d0;
+        color: #a56f53;
+        text-shadow: 0 2px 6px #ffdec5;
     }
     .no-btn {
         transition: transform 0.15s, background 0.2s;
